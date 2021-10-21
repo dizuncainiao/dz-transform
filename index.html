@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body></body>
+<script src="src/index.js"></script>
+<script>
+    const info = {name: 'bob'}
+    const arr = [{name: 'bob', age: 18}]
+
+    const infoType = {
+        name: String,
+        age: Number
+    }
+    const arrType = {
+        name: String,
+        age: Number,
+        sex: String
+    }
+
+    const newInfo = new Transform(infoType, info).getData()
+    console.log(newInfo)
+</script>
+</html>
