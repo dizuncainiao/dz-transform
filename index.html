@@ -9,15 +9,14 @@
 <script src="src/index.js"></script>
 <script>
     const info = {name: 'bob'}
+    const infoType = {name: String, age: Number}
+    const defaultInfo = {name: 'hello', age: 20}
+    // const newInfo = new Transform(infoType, info, defaultInfo).getData()
+    // console.log(newInfo)
 
-    const infoType = {
-        name: String,
-        age: Number
-    }
-
-    const defaultInfo = {name: 'hello', age: 18}
-
-    const newInfo = new Transform(infoType, info).getData()
-    console.log(newInfo)
+    const arr = [{name: 'world'}, {age: 18}, {sex: 'man'}]
+    const arrItemType = {name: String, age: Number, sex: String}
+    const defaultArrItem = {name: 'Hello', age: 20, sex: 'Women'}
+    const newArr = new Transform(arrItemType, arr, defaultArrItem)
 </script>
 </html>

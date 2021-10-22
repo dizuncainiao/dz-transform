@@ -66,12 +66,12 @@ class Transform {
                 result[key] = value
             } else {
                 const defaultVal = defaultData && defaultData[key]
-                // 不一样给出警告，有默认值赋
+                // 不一样给出警告，有默认值赋值
                 console.warn(`${key} is preset to ${presetType}, but got the ${dataType}`)
                 if (defaultVal) {
                     result[key] = defaultVal
                 } else {
-                    // 没有赋预设值
+                    // 没有赋预设值值
                     result[key] = PRESET_DATA[presetType]
                 }
             }
