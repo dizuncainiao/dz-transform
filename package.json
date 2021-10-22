@@ -1,0 +1,31 @@
+{
+  "name": "dz-transform",
+  "version": "0.0.1",
+  "description": "更好的 JavaScript 转换器!",
+  "main": "src/index.js",
+  "repository": "https://github.com/dizuncainiao/dz-transform.git",
+  "author": "wangbo <781278657@qq.com>",
+  "blog": "https://blog.csdn.net/dizuncainiao",
+  "keywords": [
+    "Transformer",
+    "Transform",
+    "JavaScript Transformer"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "eslint:fix": "./node_modules/.bin/eslint --fix ./"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "core-js": "3",
+    "eslint": "^8.0.0",
+    "rollup": "^2.58.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^4.4.4"
+  }
+}
