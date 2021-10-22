@@ -61,7 +61,6 @@ class Transform {
             const value = data[key]
             // 实际类型
             const dataType = _.getType(value)
-            console.log(presetType, dataType);
             // 预设类型和实际类型一样则直接赋值
             if (dataType.includes(presetType)) {
                 result[key] = value
