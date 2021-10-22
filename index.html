@@ -6,17 +6,12 @@
     <link rel="icon" href="./favicon.ico">
 </head>
 <body></body>
-<script src="src/index.js"></script>
+<script src="src/object-transform.js"></script>
 <script>
     const info = {name: 'bob'}
-    const infoType = {name: String, age: Number}
+    const infoType = {name: String, age: Number, sex: String}
     const defaultInfo = {name: 'hello', age: 20}
-    // const newInfo = new Transform(infoType, info, defaultInfo).getData()
-    // console.log(newInfo)
-
-    const arr = [{name: 'world'}, {age: 18}, {sex: 'man'}]
-    const arrItemType = {name: String, age: Number, sex: String}
-    const defaultArrItem = {name: 'Hello', age: 20, sex: 'Women'}
-    const newArr = new Transform(arrItemType, arr, defaultArrItem)
+    const newInfo = new Transform(infoType, info, defaultInfo).getData()
+    console.log(newInfo)
 </script>
 </html>
