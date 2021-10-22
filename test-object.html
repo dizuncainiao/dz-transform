@@ -9,7 +9,7 @@
 <script src="src/index.js"></script>
 <script>
     const info = {name: 'bob', test: 999}
-    const infoType = {name: String, age: Number, sex: String}
+    const infoType = {name: String, age: Number, sex: String, list: Array, info: Object}
     const defaultInfo = {name: 'hello', age: 20}
     const newInfo = new Transform(infoType, info, defaultInfo).getData()
     console.log(newInfo)
