@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" href="./favicon.ico">
 </head>
 <body></body>
 <script src="src/index.js"></script>
 <script>
     const info = {name: 'bob'}
-    const arr = [{name: 'bob', age: 18}]
 
     const infoType = {
         name: String,
         age: Number
     }
-    const arrType = {
-        name: String,
-        age: Number,
-        sex: String
-    }
+
+    const defaultInfo = {name: 'hello', age: 18}
 
     const newInfo = new Transform(infoType, info).getData()
     console.log(newInfo)
