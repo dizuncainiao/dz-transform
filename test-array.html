@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./src/index.js"></script>
+<script>
+    const arr = [{name: 'world'}, {age: 18}, {sex: 'man'}]
+    const arrItemType = {name: String, age: Number, sex: String}
+    const defaultArrItem = {name: 'Hello', age: 20, sex: 'Women'}
+    const newArr = new Transform(arrItemType, arr, defaultArrItem).getData()
+    console.log(newArr);
+</script>
+</body>
+</html>
