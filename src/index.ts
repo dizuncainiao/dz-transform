@@ -5,17 +5,21 @@ interface IObject {
     [propName: string]: any;
 }
 
+interface IValidator {
+    [propName: string]: (...args: any) => any;
+}
+
 type resultType = IObject | any[]
 
 type dataType = string | number | boolean | Array<any> | IObject
 
 class Transform {
     private result: resultType
-    private dataInterface: IObject
+    private dataInterface: IValidator
     private rawData: resultType
     private defaultData: resultType
 
-    constructor(dataInterface: IObject, rawData: resultType, defaultData?: IObject) {
+    constructor(dataInterface: IValidator, rawData: resultType, defaultData?: IObject) {
         Object.assign(
             this,
             {
