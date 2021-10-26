@@ -1,8 +1,9 @@
 {
   "name": "dz-transform",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "超轻量、好用的 JavaScript 转换器！",
   "main": "index.js",
+  "typings": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/dizuncainiao/dz-transform.git"
