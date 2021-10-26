@@ -15,7 +15,7 @@ interface IValidator {
 
 type resultType = IObject | IObject[]
 
-export default class Transform          {
+export default class Transform {
     private readonly result: resultType
     private readonly dataInterface: IValidator
     private readonly rawData: resultType
