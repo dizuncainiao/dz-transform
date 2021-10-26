@@ -7,16 +7,28 @@
 <body>
 <script src="./dz-transform.js"></script>
 <script>
-    const arr = [{name: 'world', age: null, list: ['foo', 'bar'], info: {foo: 'bar'}}, {age: 18}, {sex: 'man'}]
-    const arrItemType = {name: String, age: Number, sex: String, list: Array, info: Object}
+    const arr = [
+        {age: 18},
+        {sex: "man"}
+    ];
+    const arrItemType = {
+        name: String,
+        age: Number,
+        sex: String,
+        list: Array,
+        info: Object
+    };
     const defaultArrItem = {
-        name: 'Hello',
+        name: "Bob",
         age: 20,
-        sex: 'Women',
-        list: ['Hello', 'World'],
-        info: {slogan: 'Hello world!'}
-    }
-    const newArr = new Transform(arrItemType, arr, defaultArrItem).getData()
+        sex: "Women",
+        list: [
+            "Hello",
+            "World"
+        ],
+        info: {slogan: "Hello world!"}
+    };
+    const newArr = new Transform(arrItemType, arr, defaultArrItem).getData();
     console.log(newArr);
 </script>
 </body>
