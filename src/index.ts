@@ -2,18 +2,18 @@ import * as _ from './utils'
 import {PRESET_DATA} from './utils'
 
 interface IObject {
-    [propName: string]: any;
+    [propName: string]: dataType;
 }
 
 interface IValidator {
-    [propName: string]: (...args: any) => any;
+    [propName: string]: { new(...args: any[]): Function };
 }
 
 type resultType = IObject | any[]
 
 type dataType = string | number | boolean | Array<any> | IObject
 
-class Transform {
+export default class Transform {
     private result: resultType
     private dataInterface: IValidator
     private rawData: resultType
@@ -60,9 +60,9 @@ class Transform {
         Object.keys(dataInterface).forEach((key) => {
 
             // 预设类型
-            const presetType: string = dataInterface[key].name,
+            const presetType: string = dataInterface[key]['name'],
                 // 被转换数据的值
-                value: any = rawData[key],
+                value: dataType = rawData[key],
                 // 实际类型
                 dataType: string = _.getType(value);
             // 预设类型和实际类型一样则直接赋值
@@ -72,7 +72,7 @@ class Transform {
 
             } else {
 
-                const defaultVal = defaultData && defaultData[key];
+                const defaultVal: dataType = defaultData && defaultData[key];
                 // 不一样给出警告，有默认值赋值
                 console.warn(`${key} is preset to ${presetType}, but got the ${dataType}`);
                 if (defaultVal) {
@@ -95,9 +95,9 @@ class Transform {
     arrayValidator(): void {
 
         const {rawData, result} = this;
-        rawData.forEach((item, index) => {
+        (rawData as Array<IObject>).forEach((item, index) => {
 
-            result.push({});
+            (result as Array<IObject>).push({});
             this.validator(
                 item,
                 result[index]
