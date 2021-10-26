@@ -103,3 +103,13 @@ dist
 # TernJS port file
 .tern-port
 .idea
+
+index.d.ts
+index.d.ts.map
+index.js
+index.js.map
+
+utils.d.ts
+utils.d.ts.map
+utils.js
+utils.js.map

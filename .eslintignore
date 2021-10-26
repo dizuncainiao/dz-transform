@@ -1,4 +1,6 @@
 dist
 .eslintrc.js
 babel.config.js
+example
+rollup.config.js
 

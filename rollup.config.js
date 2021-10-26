@@ -5,7 +5,7 @@ import babel from "rollup-plugin-babel";
 export default {
     "input": path.resolve(
         __dirname,
-        "./src/original.js"
+        "./src/index.js"
     ),
     "output": {
         "file": path.resolve(

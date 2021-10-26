@@ -16,7 +16,7 @@ export interface PresetData {
   String: string
   Number: number
   Boolean: boolean
-  Array: never[]
+  Array: unknown[]
   Object: Record<string, unknown>
 }
 
