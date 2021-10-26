@@ -1,10 +1,16 @@
 {
   "name": "dz-transform",
   "version": "0.0.1",
-  "description": "更好的 JavaScript 转换器!",
-  "main": "src/index.js",
-  "repository": "https://github.com/dizuncainiao/dz-transform.git",
-  "author": "wangbo <781278657@qq.com>",
+  "description": "超轻量、好用的 JavaScript 转换器！",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dizuncainiao/dz-transform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dizuncainiao/dz-transform/issues"
+  },
+  "author": "WangBo <wangbo_hello@163.com>",
   "blog": "https://blog.csdn.net/dizuncainiao",
   "keywords": [
     "Transformer",
