@@ -28,6 +28,7 @@ export default class Transform {
                 defaultData
             }
         )
+        this.setInitResult();
     }
 
     setInitResult(): void {
