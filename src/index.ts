@@ -1,27 +1,25 @@
 import * as _ from './utils'
 import {PRESET_DATA} from './utils'
 
-type dataType = string | number | boolean | Array<never> | Record<string, unknown> | undefined
+type DataType = string | number | boolean | Array<never> | Record<string, unknown> | undefined
 
-interface IObject {
-    [propName: string]: dataType;
-}
+type Data = Record<string, DataType>
 
 type TypeConstructor = StringConstructor | NumberConstructor | BooleanConstructor | ArrayConstructor | ObjectConstructor
 
-interface IValidator {
+interface Validator {
     [propName: string]: TypeConstructor;
 }
 
-type resultType = IObject | IObject[]
+type resultType = Data | Data[]
 
 export default class Transform {
     private readonly result: resultType
-    private readonly dataInterface: IValidator
+    private readonly dataInterface: Validator
     private readonly rawData: resultType
-    private readonly defaultData: IObject | undefined
+    private readonly defaultData: Data | undefined
 
-    constructor(dataInterface: IValidator, rawData: resultType, defaultData?: IObject) {
+    constructor(dataInterface: Validator, rawData: resultType, defaultData?: Data) {
         this.dataInterface = dataInterface
         this.rawData = rawData
         this.defaultData = defaultData
@@ -40,25 +38,25 @@ export default class Transform {
         }
     }
 
-    validator(rawData: IObject, result: IObject): void {
+    validator(rawData: Data, result: Data): void {
         const {
             dataInterface,
             defaultData
         } = this
         Object.keys(dataInterface).forEach((key) => {
             // 预设类型
-            const presetType: string = dataInterface[key].name
+            const presetType: string = dataInterface[key].name // Number
             // 被转换数据的值
-            const value: dataType = rawData[key]
+            const value: DataType = rawData[key]
             // 实际类型
-            const dataType: string = _.getType(value)
-            // 预设类型和实际类型一样则直接赋值
-            if (dataType.includes(presetType)) {
+            const DataType: string = _.getType(value) // ‘[Object Number]’
+            // 预设类型和实际类型一样则直接赋值（Number 类型得区别判断）
+            if (DataType.includes(presetType)) {
                 result[key] = value
             } else {
-                const defaultVal: dataType = defaultData && defaultData[key]
+                const defaultVal: DataType = defaultData && defaultData[key]
                 // 不一样给出警告，有默认值赋值
-                console.warn(`${key} is preset to ${presetType}, but got the ${dataType}`)
+                console.warn(`${key} is preset to ${presetType}, but got the ${DataType}`)
                 if (defaultVal) {
                     result[key] = defaultVal
                 } else {
@@ -74,11 +72,11 @@ export default class Transform {
             rawData,
             result
         } = this;
-        (rawData as Array<IObject>).forEach((item, index) => {
-            (result as Array<IObject>).push({})
+        (rawData as Array<Data>).forEach((item, index) => {
+            (result as Array<Data>).push({})
             this.validator(
                 item,
-                (result as Array<IObject>)[index]
+                (result as Array<Data>)[index]
             )
         })
     }

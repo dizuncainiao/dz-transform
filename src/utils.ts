@@ -4,13 +4,17 @@ export const getShortType = (type: string): string => type.slice(1, -1).split(' 
 
 export const isString = (val: unknown): boolean => getType(val) === '[object String]'
 
-export const isNumber = (val: unknown): boolean => getType(val) === '[object Number]'
+export const isNumber = (val: unknown): boolean => getType(val) === '[object Number]' && !Number.isNaN(val)
 
 export const isBoolean = (val: unknown): boolean => getType(val) === '[object Boolean]'
 
 export const isArray = (val: unknown): boolean => Array.isArray(val)
 
 export const isObject = (val: unknown): boolean => getType(val) === '[object Object]'
+
+export const valIsNumber = (val: unknown): boolean => {
+  if ()
+}
 
 export interface PresetData {
   String: string
