@@ -1,5 +1,5 @@
 import * as _ from './utils'
-import {PRESET_DATA} from './utils'
+import {PRESET_DATA, valIsNumber} from "./utils";
 
 type DataType = string | number | boolean | Array<never> | Record<string, unknown> | undefined
 
@@ -51,7 +51,7 @@ export default class Transform {
             // 实际类型
             const DataType: string = _.getType(value) // ‘[Object Number]’
             // 预设类型和实际类型一样则直接赋值（Number 类型得区别判断）
-            if (DataType.includes(presetType)) {
+            if (DataType.includes(presetType) && valIsNumber(value)) {
                 result[key] = value
             } else {
                 const defaultVal: DataType = defaultData && defaultData[key]

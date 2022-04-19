@@ -8,10 +8,24 @@
 <body></body>
 <script src="./dz-transform.js"></script>
 <script>
-    const info = {name: 'bob', test: 999, age: NaN}                                                                   // 后端返回的数据
-    const infoType = {name: String, age: Number, isMale: Boolean, sex: String, list: Array, info: Object}   // 验证器
-    const defaultInfo = {name: 'hello', age: 20}                                                            // 前端自定义的默认补位数据
-    const newInfo = new Transform(infoType, info, defaultInfo).getData()
-    console.log(newInfo)
+    const info = {
+        name: "bob",
+        test: 999,
+        age: NaN
+    };                                                                   // 后端返回的数据
+    const infoType = {
+        name: String,
+        age: Number,
+        isMale: Boolean,
+        sex: String,
+        list: Array,
+        info: Object
+    };   // 验证器
+    const defaultInfo = {
+        name: "hello",
+        age: 20
+    };                                                            // 前端自定义的默认补位数据
+    const newInfo = new Transform(infoType, info, defaultInfo).getData();
+    console.log(newInfo);
 </script>
 </html>
