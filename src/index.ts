@@ -1,9 +1,9 @@
 import * as _ from './utils'
-import {PRESET_DATA, valIsNumber} from "./utils";
+import {PRESET_DATA, PresetDataKeyType, valIsNumber} from "./utils";
 
 type DataType = string | number | boolean | Array<never> | Record<string, unknown> | undefined
 
-type Data = Record<string, DataType>
+type Data = Record<string, any>
 
 type TypeConstructor = StringConstructor | NumberConstructor | BooleanConstructor | ArrayConstructor | ObjectConstructor
 
@@ -61,7 +61,7 @@ export default class Transform {
                     result[key] = defaultVal
                 } else {
                     // 没有赋预设值值
-                    result[key] = PRESET_DATA[presetType]
+                    result[key] = PRESET_DATA[presetType as PresetDataKeyType]
                 }
             }
         })
