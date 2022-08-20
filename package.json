@@ -2,8 +2,8 @@
   "name": "dz-transform",
   "version": "1.0.0",
   "description": "超轻量、好用的 JavaScript 转换器！",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "dist/umd/dz-transform.js",
+  "module": "dist/es/dz-transform.js",
   "typings": "./index.d.ts",
   "repository": {
     "type": "git",
